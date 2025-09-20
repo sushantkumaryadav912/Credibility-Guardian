@@ -1,5 +1,3 @@
-Here is a complete, polished README for Credibility Guardian that covers setup, usage, architecture, and deployment details. 
-
 # Credibility Guardian
 
 A modern, AI‑powered analyzer that evaluates article URLs, pasted text, and uploaded documents for credibility, bias, and manipulative techniques, with a premium black‑gold iOS‑style React frontend and a Python Flask backend.
