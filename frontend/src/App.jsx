@@ -13,6 +13,8 @@ function App() {
   const [error, setError] = useState('')
   const [urlValidation, setUrlValidation] = useState({ isValid: true, message: '' })
 
+
+  const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8080'
   // Accepted file types for document analysis
   const acceptedFileTypes = {
     'application/pdf': '.pdf',
@@ -226,7 +228,7 @@ function App() {
         formData.append('type', 'document')
         formData.append('file', selectedFile)
 
-        response = await axios.post('http://localhost:8080/analyze', formData, {
+        response = await axios.post(`${API_BASE}/analyze`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -243,7 +245,7 @@ function App() {
           data: activeTab === 'url' ? urlInput.trim() : textInput.trim()
         }
 
-        response = await axios.post('http://localhost:8080/analyze', payload, {
+        response = await axios.post(`${API_BASE}/analyze`, payload, {
           headers: {
             'Content-Type': 'application/json',
           },
