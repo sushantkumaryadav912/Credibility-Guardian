@@ -20,9 +20,11 @@ from striprtf.striprtf import rtf_to_text
 # Load environment variables from .env file
 load_dotenv()
 
+frontend_origin = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
+
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, origins=["*"])
+CORS(app, origins=[frontend_origin])
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -555,5 +557,4 @@ def method_not_allowed(error):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
-    debug_mode = os.environ.get('FLASK_ENV') == 'development'
-    app.run(host='0.0.0.0', port=port, debug=debug_mode)
+    app.run(host='0.0.0.0', port=port, debug=False)
