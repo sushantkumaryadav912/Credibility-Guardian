@@ -293,7 +293,7 @@ function App() {
 
       {/* Header */}
       <header className="header">
-        <h1>Credibility Analyzer</h1>
+        <h1>Credibility Guardian</h1>
         <p>By Team TechnoCrat</p>
         <br />
         <p>Advanced AI-powered misinformation detection</p>
